@@ -14,13 +14,14 @@ export default function Page() {
   return (
     <main className="main">
       <div className="messages">
-        {messages.map(m => (
+        {messages.map((m) => (
           <div
             key={m.id}
             className={`message ${m.role === 'user' ? 'user' : 'assistant'}`}
           >
-            {/* Hvis der er billeder eller links i parts, så rendér dem selv */}
-            {m.parts.map(p => p.text).join('')}
+            {m.parts
+              ? m.parts.map((p) => p.text).join('')
+              : m.content}
           </div>
         ))}
       </div>

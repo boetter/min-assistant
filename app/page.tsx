@@ -1,13 +1,13 @@
 'use client'
 import { useAssistant } from '@ai-sdk/react'
-import { FormEvent } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 export default function Page() {
   const {
     messages,
     input,
     handleInputChange,
-    submitMessage,
+    handleSubmit,
     status
   } = useAssistant({ api: '/api/assistant' })
 
@@ -19,19 +19,14 @@ export default function Page() {
             key={m.id}
             className={`message ${m.role === 'user' ? 'user' : 'assistant'}`}
           >
-            {m.content}
+            <ReactMarkdown>{m.content}</ReactMarkdown>
           </div>
         ))}
       </div>
 
-      <form
-        className="inputContainer"
-        onSubmit={(e: FormEvent) => {
-          e.preventDefault()
-          submitMessage(e)
-        }}
-      >
+      <form className="inputContainer" onSubmit={handleSubmit}>
         <input
+          type="text"
           placeholder="Hvilken slags musik ka' du li'?"
           value={input}
           onChange={handleInputChange}

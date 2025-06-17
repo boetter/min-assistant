@@ -19,9 +19,7 @@ export default function Page() {
             key={m.id}
             className={`message ${m.role === 'user' ? 'user' : 'assistant'}`}
           >
-            {m.parts
-              ? m.parts.map((p) => p.text).join('')
-              : m.content}
+            {m.content}
           </div>
         ))}
       </div>

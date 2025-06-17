@@ -7,7 +7,7 @@ export default function Page() {
     messages,
     input,
     handleInputChange,
-    handleSubmit,
+    submitMessage,
     status
   } = useAssistant({ api: '/api/assistant' })
 
@@ -24,7 +24,7 @@ export default function Page() {
         ))}
       </div>
 
-      <form className="inputContainer" onSubmit={handleSubmit}>
+      <form className="inputContainer" onSubmit={submitMessage}>
         <input
           type="text"
           placeholder="Hvilken slags musik ka' du li'?"

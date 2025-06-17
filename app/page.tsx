@@ -30,12 +30,12 @@ export default function Page() {
           placeholder="Hvilken slags musik ka' du li'?"
           value={input}
           onChange={handleInputChange}
-          disabled={status !== 'ready'}
+          disabled={status !== 'awaiting_message'}
         />
-        <button type="submit" disabled={status !== 'ready'}>
+        <button type="submit" disabled={status !== 'awaiting_message'}>
           SEND
         </button>
       </form>
     </main>
-  )
+)
 }

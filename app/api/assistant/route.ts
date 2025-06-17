@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       return forwardStream(
         openai.beta.threads.runs.stream(tid, {
           assistant_id: process.env.ASSISTANT_ID!,
-          max_completion_tokens: 2048    // korrekt param-navn  [oai_citation:0‡community.openai.com](https://community.openai.com/t/max-completion-tokens-not-working-with-openai-beta-threads-runs-stream/923425?utm_source=chatgpt.com)
+          max_completion_tokens: 25000
         })
       )
     }

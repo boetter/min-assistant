@@ -24,10 +24,14 @@ export default function Page() {
         ))}
       </div>
 
+      {status === 'in_progress' && (
+        <div className="loading">Loading…</div>
+      )}
+
       <form className="inputContainer" onSubmit={submitMessage}>
         <input
           type="text"
-          placeholder="Hvilken slags musik ka' du li'?"
+          placeholder="What kind of music do you listen to?"
           value={input}
           onChange={handleInputChange}
           disabled={status !== 'awaiting_message'}
@@ -37,5 +41,5 @@ export default function Page() {
         </button>
       </form>
     </main>
-)
+  )
 }

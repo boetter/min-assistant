@@ -1,45 +1,55 @@
-/* app/globals.css */
+/* Reset + font */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: #f2f4f5;
 }
 
+/* Container */
 .main {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Beskeder */
 .messages {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
-
 .message {
   padding: 1rem;
   border-radius: 8px;
   line-height: 1.4;
 }
-
 .message.user {
   background: #d1f0ff;
   align-self: flex-end;
 }
-
 .message.assistant {
   background: #ffffff;
   border: 1px solid #e0e0e0;
   align-self: flex-start;
 }
 
+/* Loading-indikator */
+.loading {
+  text-align: center;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+/* Inputfelt + knap */
 .inputContainer {
   display: flex;
   margin-top: 1rem;
 }
-
 .inputContainer input {
   flex: 1;
   padding: 0.75rem;
@@ -48,7 +58,10 @@ html, body {
   border-radius: 4px 0 0 4px;
   outline: none;
 }
-
+.inputContainer input:disabled {
+  background: #eee;
+  cursor: not-allowed;
+}
 .inputContainer button {
   padding: 0 1.5rem;
   font-size: 1rem;
@@ -57,4 +70,16 @@ html, body {
   color: white;
   cursor: pointer;
   border-radius: 0 4px 4px 0;
+}
+.inputContainer button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive billeder */
+.message img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5rem 0;
 }

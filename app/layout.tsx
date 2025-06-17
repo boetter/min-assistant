@@ -1,17 +1,12 @@
 // app/layout.tsx
-export const metadata = {
-  title: 'Min Assistant',
-  description: 'Chat med min Playground-assistant'
-}
+import './globals.css';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const metadata = { /* … */ };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="da">
       <body>{children}</body>
     </html>
-  )
+  );
 }

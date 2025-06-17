@@ -1,0 +1,60 @@
+/* app/globals.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f2f4f5;
+}
+
+.main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.message.user {
+  background: #d1f0ff;
+  align-self: flex-end;
+}
+
+.message.assistant {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  align-self: flex-start;
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.inputContainer button {
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
